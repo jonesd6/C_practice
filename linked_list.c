@@ -9,6 +9,18 @@ struct node {
     struct node * next;
 };
 
+void print_file(struct node * head) {
+    while (1) { 
+        printf("%d\n",head->data);
+        if (head->next == NULL) {
+            break;
+       }
+       head = head->next;
+        
+ 
+    }
+}
+
 int main() {
 
     struct node* head = NULL;
@@ -81,7 +93,7 @@ int main() {
     indicate that the linked list is terminated here.
     */
 
-      
+    print_file(head);      
     return 0;
 }
 
