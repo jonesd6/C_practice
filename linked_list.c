@@ -9,6 +9,16 @@ struct node {
     struct node * next;
 };
 
+void push_node(struct node ** head, int to_add) {
+    struct node* new_head = NULL;
+    new_head = (struct node*)malloc(sizeof(struct node));
+
+    new_head->data = to_add;
+    new_head->next = (*head);
+    (*head) = new_head;
+    
+}
+
 void print_file(struct node * head) {
     while (1) { 
         printf("%d\n",head->data);
@@ -94,6 +104,9 @@ int main() {
     */
 
     print_file(head);      
+
+    push_node(&head, 1);
+    print_file(head);
     return 0;
 }
 
